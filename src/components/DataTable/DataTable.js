@@ -8,7 +8,7 @@ export const DataTable = ({data}) => {
 
 
     const remove = (id) => {
-        FirebaseService.remove(id, 'leituras');
+        FirebaseService.remove(id, 'equipamentos');
     };
 
     return <React.Fragment>

@@ -23,7 +23,7 @@ class Add extends Component {
         const {id} = this.props.match.params;
         if (!(id === undefined || !id)) {
             this.setState({id});
-            FirebaseService.getUniqueDataBy('leituras', id, (data) => this.setState({...data}, () => console.log(this.state)));
+            FirebaseService.getUniqueDataBy('equipamentos', id, (data) => this.setState({...data}, () => console.log(this.state)));
         }
 
     };
@@ -49,9 +49,9 @@ class Add extends Component {
         };
 
         if (this.props.match.params.id === undefined) {
-            FirebaseService.pushData('leituras', objToSubmit);
+            FirebaseService.pushData('equipamentos', objToSubmit);
         } else {
-            FirebaseService.updateData(this.props.match.params.id, 'leituras', objToSubmit)
+            FirebaseService.updateData(this.props.match.params.id, 'equipamentos', objToSubmit)
         }
 
         this.props.history.push(urls.data.path);

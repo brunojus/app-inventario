@@ -35,7 +35,7 @@ class App extends Component {
             (authUser) => this.props.login(authUser),
             () => this.props.logout()
         );
-        FirebaseService.getDataList('leituras', (dataReceived) => this.setState({data: dataReceived}))
+        FirebaseService.getDataList('equipamentos', (dataReceived) => this.setState({data: dataReceived}))
     }
 
     render() {
