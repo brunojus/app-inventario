@@ -67,7 +67,7 @@ class Add extends Component {
     render = () => {
         return (<React.Fragment>
 
-            <Typography variant="headline" component="h2">Add New</Typography>
+            <Typography variant="headline" component="h2">Inserir</Typography>
             <form onSubmit={this.submit}>
                 <TextField className="input-field"
                            type="text"
@@ -99,7 +99,7 @@ class Add extends Component {
                            onChange={this.handleChange('local')}/>
 
                 <Button type="submit"
-                        style={{marginTop: '20px', display: 'inline-block'}}>
+                        style={{marginTop: '20px', display: 'inline-block',backgroundColor: 'rgb(156, 39, 176)',color:'white',marginTop:'10px'}}>
                     Add
                 </Button>
             </form>

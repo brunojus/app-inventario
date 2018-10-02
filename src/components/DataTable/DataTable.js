@@ -51,6 +51,8 @@ export const DataTable = ({data}) => {
             </TableBody>
             
         </Table>
-        <Button  style={{backgroundColor: 'rgb(156, 39, 176)',color:'white',marginTop:'10px'}}>Novo</Button>
+        <Link to="/add">
+            <Button  style={{backgroundColor: 'rgb(156, 39, 176)',color:'white',marginTop:'10px'}}>Novo</Button>
+        </Link>
     </React.Fragment>
 };

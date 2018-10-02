@@ -12,7 +12,7 @@ export const Welcome = () => {
             {
                 Object.values(urls).map((url, index) => {
 
-                    return <Button  key={index} component={props => <Link to={url.path} {...props}/>}>
+                    return <Button  style={{backgroundColor: 'rgb(156, 39, 176)',marginLeft:'10px',color:'white'}}  key={index} component={props => <Link to={url.path} {...props}/>}>
                         {url.name}
                     </Button>
                 })
