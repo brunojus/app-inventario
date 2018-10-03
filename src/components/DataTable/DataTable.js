@@ -13,6 +13,9 @@ export const DataTable = ({data}) => {
 
     return <React.Fragment>
         <Typography variant="headline" component="h2">Data</Typography>
+        <Link to="/add">
+            <Button  style={{backgroundColor: 'rgb(156, 39, 176)',color:'white'}}>Novo</Button>
+        </Link>
         <Table selectable="false">
             <TableHead>
                 <TableRow>
@@ -51,8 +54,6 @@ export const DataTable = ({data}) => {
             </TableBody>
             
         </Table>
-        <Link to="/add">
-            <Button  style={{backgroundColor: 'rgb(156, 39, 176)',color:'white',marginTop:'10px'}}>Novo</Button>
-        </Link>
+
     </React.Fragment>
 };

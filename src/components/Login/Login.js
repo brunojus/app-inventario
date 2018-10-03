@@ -66,14 +66,10 @@ class Login extends Component {
                                onChange={this.handleChange('password')}/>
 
                     <Button type="submit"
-                            style={{marginTop: '20px', display: 'inline-block'}}>
+                            style={{marginTop: '20px', display: 'inline-block',backgroundColor: 'rgb(156, 39, 176)',color:'white'}}>
                         Login
                     </Button>
 
-                    <Button onClick={this.createUser}
-                            style={{marginTop: '20px', display: 'inline-block'}}>
-                        New User
-                    </Button>
 
                 </form>
             </Fragment>)
