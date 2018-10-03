@@ -6,7 +6,7 @@ import {privateUrls} from "../../utils/urlUtils";
 
 export const DataTable = ({data}) => {
 
-
+    console.log(data);
     const remove = (id) => {
         FirebaseService.remove(id, 'equipamentos');
     };
@@ -27,7 +27,7 @@ export const DataTable = ({data}) => {
             <TableBody>
                 {
                     data.map((item, index) =>
-                 
+                        
                         <TableRow key={index}>
                             <TableCell>{item.equipamento}</TableCell>
                             <TableCell>{item.quantidade}</TableCell>

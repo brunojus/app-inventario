@@ -48,7 +48,7 @@ class App extends Component {
 
                     <TopBar/>
 
-                    <Card style={{margin: '50px', overflow:'scroll'}}>
+                    <Card style={{margin: '50px', overflow:'auto'}}>
                         <CardContent >
                             <Route exact path={urls.login.path}
                                    render={(props) =>

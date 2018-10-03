@@ -1,7 +1,7 @@
 import {firebaseDatabase, firebaseAuth} from '../utils/firebaseUtils'
 
 export default class FirebaseService {
-    static getDataList = (nodePath, callback, size = 10) => {
+    static getDataList = (nodePath, callback, size = 1000) => {
 
         let query = firebaseDatabase.ref(nodePath).limitToLast(size);
         query.on('value', dataSnapshot => {

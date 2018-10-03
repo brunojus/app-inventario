@@ -99,7 +99,7 @@ class Add extends Component {
                            onChange={this.handleChange('local')}/>
 
                 <Button type="submit"
-                        style={{marginTop: '20px', display: 'inline-block',backgroundColor: 'rgb(156, 39, 176)',color:'white',marginTop:'10px'}}>
+                        style={{marginTop: '20px', display: 'inline-block',backgroundColor: 'rgb(156, 39, 176)',color:'white'}}>
                     Add
                 </Button>
             </form>
