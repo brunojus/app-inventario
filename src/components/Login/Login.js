@@ -1,8 +1,10 @@
 import React, {Component, Fragment} from "react";
-import {Button, TextField, Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import FirebaseService from "../../services/FirebaseService";
 import {urls} from "../../utils/urlUtils";
 import {withRouter} from "react-router-dom";
+import {firebaseAuth, googleProvider} from "../../utils/firebaseUtils"
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 class Login extends Component {
 
@@ -11,18 +13,13 @@ class Login extends Component {
         password: ''
     };
 
-    login = (event) => {
-        event.preventDefault();
-        const {email} = this.state;
-        const {password} = this.state;
-        FirebaseService.login(email, password)
-            .then(() => {
-                this.props.history.push(urls.home.path);
-            })
-            .catch(error => {
-                alert(error.message);
-            });
-    };
+    login() {
+        firebaseAuth.signInWithPopup(googleProvider) 
+          .then((result) => {
+            const user = result.user;
+            console.log(user)
+          });
+      };
 
     createUser = (event) => {
         event.preventDefault();
@@ -51,27 +48,9 @@ class Login extends Component {
         return (
             <Fragment>
                 <Typography variant="headline" component="h2">Login</Typography>
-                <form onSubmit={this.login}>
-                    <TextField className="input-field"
-                               type="email"
-                               value={this.state.email}
-                               label="email"
-                               required
-                               onChange={this.handleChange('email')}/>
-                    <TextField className="input-field"
-                               type="password"
-                               value={this.state.password}
-                               label="password"
-                               required
-                               onChange={this.handleChange('password')}/>
-
-                    <Button type="submit"
-                            style={{marginTop: '20px', display: 'inline-block',backgroundColor: 'rgb(156, 39, 176)',color:'white'}}>
-                        Login
-                    </Button>
-
-
-                </form>
+                <GoogleLoginButton style={{marginTop: '10px',marginLeft:"-1px",width:"100px"}} onClick={this.login} >
+                    <span>Uiot</span>
+                </GoogleLoginButton>
             </Fragment>)
     };
 }
