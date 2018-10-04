@@ -1,0 +1,66 @@
+[debug] [2018-10-04T20:10:36.947Z] ----------------------------------------------------------------------
+[debug] [2018-10-04T20:10:36.949Z] Command:       /home/bruno/.nvm/versions/node/v8.0.0/bin/node /home/bruno/app-uiot/node_modules/.bin/firebase deploy
+[debug] [2018-10-04T20:10:36.949Z] CLI Version:   4.2.1
+[debug] [2018-10-04T20:10:36.949Z] Platform:      linux
+[debug] [2018-10-04T20:10:36.949Z] Node Version:  v8.0.0
+[debug] [2018-10-04T20:10:36.949Z] Time:          Thu Oct 04 2018 17:10:36 GMT-0300 (-03)
+[debug] [2018-10-04T20:10:36.949Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-04T20:10:36.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-04T20:10:36.968Z] > authorizing via signed-in user
+[debug] [2018-10-04T20:10:36.976Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-04T20:10:36.976Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-04T20:10:37.279Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-04T20:10:37.285Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/uiot-b8cb0  
+ 
+[debug] [2018-10-04T20:10:38.973Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'uiot-b8cb0'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-10-04T20:10:38.979Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/uiot-b8cb0/versions  
+
+[debug] [2018-10-04T20:10:42.197Z] <<< HTTP RESPONSE 200
+[info] i  hosting[uiot-b8cb0]: beginning deploy...
+[info] i  hosting[uiot-b8cb0]: found 8 files in build
+[debug] [2018-10-04T20:10:43.471Z] [hosting] hash cache [YnVpbGQ] stored for 8 files
+[debug] [2018-10-04T20:10:43.471Z] [hosting][hash queue][FINAL]
+[debug] [2018-10-04T20:10:43.471Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/uiot-b8cb0/versions/a0ccab15263d8fcd:populateFiles  
+ <request body omitted>
+[debug] [2018-10-04T20:10:45.157Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-04T20:10:45.169Z] [hosting][populate queue][FINAL]
+[debug] [2018-10-04T20:10:45.169Z] [hosting] uploads queued: 7
+[debug] [2018-10-04T20:11:01.568Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[uiot-b8cb0]: file upload complete
+[debug] [2018-10-04T20:11:01.569Z] [hosting] deploy completed after 19371ms
+[debug] [2018-10-04T20:11:01.879Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "uiot-b8cb0"
+    },
+    "site": "uiot-b8cb0",
+    "version": "sites/uiot-b8cb0/versions/a0ccab15263d8fcd"
+  }
+]
+[info] i  hosting[uiot-b8cb0]: finalizing version...
+[debug] [2018-10-04T20:11:01.879Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/uiot-b8cb0/versions/a0ccab15263d8fcd?updateMask=status  
+
+[debug] [2018-10-04T20:11:22.159Z] Error: getaddrinfo EAI_AGAIN firebasehosting.googleapis.com:443
+    at Object.exports._errnoException (util.js:1026:11)
+    at errnoException (dns.js:55:15)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:95:26)
+[error] 
+[error] Error: Server Error. getaddrinfo EAI_AGAIN firebasehosting.googleapis.com:443
